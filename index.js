@@ -45,10 +45,11 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(originalFlavors){
+function copy(array){
     /*your code here*/
 
-return originalFlavors;
+
+return [...array];
 }    
 
 
@@ -66,10 +67,14 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(originalFlavors){
-   /*your code here*/
-   return originalFlavors
+function is31Flavors(newArray){
+    if(newArray.length === 31){
+        return true;
+    }else{
+        return false;
+    }
 }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -84,8 +89,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(array, string){
+
+   array.unshift(string);
+
+   return array;
 }
 
 
@@ -100,8 +108,10 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(array){
+    array.pop();
+
+    return array;
 }
 
 
@@ -164,9 +174,8 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(arr, string){
-    /*your code here*/
     const newArray = [];
-    for(let i = 0; i < arr.lenght; i++){
+    for(let i = 0; i < arr.length; i++){
         if(arr[i].includes(string)){
             newArray.push(arr[i]);
         }
